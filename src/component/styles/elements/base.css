@@ -1,3 +1,9 @@
 body {
     background: var(--color-pomg-and-power);
 }
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
