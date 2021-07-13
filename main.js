@@ -5,9 +5,13 @@ import './src/component/styles/elements/base.css'
 import CardGame from "./src/component/CardGame";
 import CardWrapper from './src/component/CardWrapper';
 import CardDiv from './src/component/SideDiv';
+import DIV from './src/component/NavBar';
+import PlayerNames from './src/component/PlayerNames';
  
  const $root = document.querySelector("#root");
  const $htmlCardWrapper = CardWrapper();
+ const $htmlNavBar = DIV();
+ const $htmlPlayerName = PlayerNames();
  const $htmlCardDiv = CardDiv();
  const $htmlCardGame = CardGame() + CardGame() + CardGame();
 
@@ -21,8 +25,24 @@ import CardDiv from './src/component/SideDiv';
  $CardWrapper.firstElementChild.classList.add("left");
  $CardWrapper.lastElementChild.classList.add("right");
 
- const $htmlLeft = document.querySelector(".left");
- const $htmlRight = document.querySelector(".right");
+ $CardWrapper.insertAdjacentHTML('afterbegin', $htmlNavBar);
 
- $htmlLeft.insertAdjacentHTML('beforeend', $htmlCardGame);
- $htmlRight.insertAdjacentHTML('beforeend', $htmlCardGame);
+ const $NavBar = document.querySelector(".nav-bar");
+
+ $NavBar.insertAdjacentHTML('beforeend', $htmlPlayerName);
+ $NavBar.insertAdjacentHTML('beforeend', $htmlPlayerName);
+
+ $NavBar.firstElementChild.classList.add("player-left");
+ $NavBar.lastElementChild.classList.add("player-right");
+
+ const $PlayerNameLeft = document.querySelector(".player-left");
+ const $PlayerNameRight = document.querySelector(".player-right");
+
+ $PlayerNameLeft.insertAdjacentText('beforeend', "Player1");
+ $PlayerNameRight.insertAdjacentText('beforeend', "Player1");
+
+ const $WrapperLeft = document.querySelector(".left");
+ const $WrapperRight = document.querySelector(".right");
+
+ $WrapperLeft.insertAdjacentHTML('beforeend', $htmlCardGame);
+ $WrapperRight.insertAdjacentHTML('beforeend', $htmlCardGame);

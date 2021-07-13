@@ -1,12 +1,12 @@
+.side {
+    height: 528px;
+    margin-top: 15px;
+}
+
 .left {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
 }
 
 .right {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    float: right;
 }
